@@ -1,7 +1,7 @@
 # sysadmin-challenge
 ## Instrucciones
 En este primer paso, lo que vamos a hacer es refrescar tus conocimientos en **Git / Github**, esto, deberia ser el flujo "normal" de un ambiente de trabajo colaborativo. 
-### Paso 1 - Prueba colaboracion
+### Reto 1 - Prueba colaboracion
 1. Descarga este repositorio en tu equipo de trabajo
 2. Verifica el contenido del repositorio
 3. Añade un archivo llamado tarea1.MD a tu repositorio local. Este archivo debe llevar nomenclatura "Markdown" (Ver Nota)
