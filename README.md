@@ -25,7 +25,9 @@ Para tal fin, necesitas entender las herramientas (comandos) que te permitiran e
 Asi que ahora, te toca hacer tu segundo aporte a este repositorio siguiendo estos pasos, trabajemos de la misma forma que en el `reto 1`.
 1. Crea un archivo en tu repositorio local llamado `reto2.MD` y utilizando todas las propiedades de archivos MD (Markdown) que consideres necesarias para añadir legibilidad, escribe con tus propias palabras los siguientes conceptos. (Concepto basico de redes, protocolo IP, protocolos TCP/IP, direccion IP, mascara de red, direccion de red y composicion de una direccion IP)
 2. Resume brevemente la funcionalidad de los siguientes comandos, de ser posible añade una salida de cada uno de ellos en tu equipo y cada paso que hayas ejecutado para obtener tal salida (recuerda utilizar el MARKDOWN) `ip a` `lshw -class network` `ip route show`. ¿Que informacion importante destacarias de las salidas de los comandos indicados?
-### Solo en extricto caso de emergencia, leer esto
+
+
+### Solo en extricto caso de emergencia, leer esto ⚠️
 ### Consejo
 Investiga, se curioso, pero conciso, trata de llevar la idea inicial de lo que quieres expresar. Ante la duda, recuerda que puedes usar el comando `man`
 Y como "ultima opcion" te dejo esto que basicamente tiene [todo lo que necesitas](https://ubuntu.com/server/docs/network-introduction) 
