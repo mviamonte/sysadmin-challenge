@@ -16,5 +16,5 @@ Tu archivo, con el que vas a colaborar en este repositorio, deberia lucir algo a
 2. Verifica el contenido del repositorio  
 `cd nombre_del_repositorio`  
 `ls -lart`  
-Y asi con el resto de los pasos indicados. Ademas, tu archivo debe llevar formato tipo "MARKDOWN". --> Ver esta referencia https://www.markdownguide.org/basic-syntax/
-Adicionalmente, indica en breves lineas la explicacion de los pasos que estes ejecutando. 
+Y asi con el resto de los pasos indicados. Ademas, tu archivo debe llevar formato tipo "MARKDOWN". --> [Ver esta referencia](https://www.markdownguide.org/basic-syntax/)  
+Adicionalmente, indica en breves lineas la explicacion de los pasos que estes ejecutando, siempre respetando los formatos aceptados por el archivo MD. 
