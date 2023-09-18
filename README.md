@@ -54,3 +54,32 @@ La salida del comando `ip a` te muestras las interfaces y direcciones IP disponi
            valid_lft 3257sec preferred_lft 3257sec
         inet6 fe80::216:3eff:fee2:5242/64 scope link
            valid_lft forever preferred_lft forever
+
+### Reto 3 - Utilizando conceptos de direccionamiento IP -  🌎 
+Hagamos, de forma practica algunos ejercicios de Networking. Digamos que necesitamos crear veinte redes distintas, es una empresa relativamente mediana asi que vamos a tener que separar logicamente, los departamentos y grupos de trabajo por red. 
+Queremos tener una direccion IP base adecuada para alojar las veinte (20) redes indicadas y la cantidad de host o dispositivos dentro de cada red. Estos dispositivos pueden ser laptops, pcs, telefonos moviles, etc. 
+Dentro de cada red, existiran al menos unos 100 dispositivos que se van a conectar a cada red. Es decir
+Red 1 - 100 usuarios
+Red 2 - 100 usuarios
+Y asi hasta llegar a la red 20. 
+Para esto necesitas planificar el direccionamiento IP. ¿Como haces eso? Bueno, esa es la parte del reto. Tienes que aplicar los conocimientos adquiridos en redes y realizar este ejercicio, especificamente como separar o crear sub-redes. El resultado, seran las veinte redes con sus correspondientes segmentos y el comienzo y final de cada segmento de red asi como segmentos para los dispositivos o host. Adicionalmente, cada red debe indicar su "Gateway", y reservar al menos tres (3) direcciones IP. 
+
+## Un ejemplo simple
+Una (1) red y ciento cincuenta (150) host
+Direccion IP base 192.168.1.0/24
+Direcciones IP reservadas: GW 192.168.1.1. .2, .3 y .4 estan reservadas. 
+Rango util 192.168.1.5 - 192.168.1.254. 
+Pregunta. ¿Cuantas direcciones IP disponibles tiene el ejemplo? 
+
+Ahora, basado en este ejemplo, tienes que plantear igual, una direccion IP base con mascara /24 y otra direccion base con mascara /20. 
+Sugerencia, puedes usar la misma 192.168.1.0 como base, pero con las mascaras indicadas. Es decir 192.168.1.0/24 y 192.168.1.0/20. Evidentemente, los rangos van a ser distintos para los dos cosas. Tampoco hagas los "calculos" de manera manual, busca herramientas online que te permitan ejecutar la tarea, lo mas importante, entender que estas haciendo. 
+
+Una vez resuelto esto, responde las siguientes preguntas, todas asociadas al segundo caso, el de /20. 
+1. ¿Cual es la direccion de red de la red numero cuatro (4)?    
+2. ¿Cual seria el gateway de la ultima red, es decir de la red numero veinte (20)?   
+3. ¿Si la red diez (10) es la red de servidores web , cual seria una direccion IP valida para un servidor Apache a ser desplegado en dicha red?     
+4. Imagina que la re ocho (8) va a ser la red de "servicios" y decides instalar un DNS, indica dos direcciones IP para tal servicio.
+5. Indica la direccion de broadcast the la red doce (12).
+
+Un tip. Piensa que en el archivo MD puedes agregar tablas para que la informacion este mas organizada. 
+Exito y suerte!! 
