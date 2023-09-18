@@ -54,3 +54,21 @@ La salida del comando `ip a` te muestras las interfaces y direcciones IP disponi
            valid_lft 3257sec preferred_lft 3257sec
         inet6 fe80::216:3eff:fee2:5242/64 scope link
            valid_lft forever preferred_lft forever
+
+### Reto 3 - Networking tools - Parte 2 🌎
+Hagamos, de forma practica algunos ejercicios de Networking. Digamos que necesitamos crear veinte redes distintas, es una empresa relativamente mediana asi que vamos a tener que separar logicamente, los departamentos y grupos de trabajo por red. 
+Queremos tener una direccion IP base adecuada para alojar las veinte (20) redes indicadas y la cantidad de host o dispositivos dentro de cada red. Estos dispositivos pueden ser laptops, pcs, telefonos moviles, etc. 
+Dentro de cada red, existiran al menos unos 100 dispositivos que se van a conectar a cada red. Es decir
+Red 1 - 100 usuarios
+Red 2 - 100 usuarios
+Y asi hasta llegar a la red 20. 
+Para esto necesitas planificar el direccionamiento IP. ¿Como haces eso? Bueno, esa es la parte del reto. Tienes que aplicar los conocimientos adquiridos en redes y realizar este ejercicio, especificamente como separar o crear sub-redes. El resultado, seran las veinte redes con sus correspondientes segmentos y el comienzo y final de cada segmento de red asi como segmentos para los dispositivos o host. Adicionalmente, cada red debe indicar su "Gateway", y reservar al menos tres (3) direcciones IP. 
+
+Un ejemplo simple
+Una (1) red y ciento cincuenta (150) host
+Direccion IP base 192.168.1.0/24
+Direcciones IP reservadas: GW 192.168.1.1. .2, .3 y .4 estan reservadas. 
+Rango util 192.168.1.5 - 192.168.1.254. 
+Pregunta. ¿Cuantas direcciones IP disponibles tiene el ejemplo? 
+
+Ahora, basado en este ejemplo, tienes que plantear igual, una direccion IP base (pero el tema esta en que NO puedes usar la misma mascara. ¿Sabes por que?) 
