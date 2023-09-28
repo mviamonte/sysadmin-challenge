@@ -3,9 +3,9 @@
 
 > Crear 20 redes y que cada una disponga de aproximadamente 100 host habilitados para conectar 100 dispositivos (tables ,telefonos celulares, pcs etc.) ademas cada red debe indicar su "Gateway" reservando al menos 3 direcciones IP .
 
- #### Procedimiento: 
+ ### Procedimiento: 
 
- > 1 El primer paso seria identificar con que clase de direccion IP trabajaremos; se mostraran las clases principales 
+  **1.  Identificar con que clase de direccion IP trabajaremos.**
 
  **CLASE**  |**IP PREDETERMINADA**  | **RANGO** |
 |:------------- |:---------------:| -------------:|
@@ -13,9 +13,10 @@
 | B        | 255.255.0.0       |  128.0.0.0 - 191.255.255.255   |
 | C         |255.255.255.0       | 192.0.0.0 - 223.255.255.255       |
 
-> 2 Se procede a trabajar con una red de clase C especificamente la red con el `IP: 192.150.0.0` la cual nos permitira almacenar las 20 sub redes<
+ - Se procede a trabajar con una red de clase C especificamente la red con el `IP: 192.150.0.0` la cual nos permitira almacenar las 20 sub redes<
 
->3 Se procede a crear la mascara de red que soportara no solo a las 20 sub redes sino tambien a los 100 host o dispositivos que estaran conectados a cada sub red<
+**2 Creacion de a nueva mascara de Red**
+
 
 - Para crear una mascara de red que pueda almacenar los 100 host se comienza  por escribir en `binario` la mascara general de una direccion IP de `clase C`
 
@@ -40,6 +41,42 @@ n=log2(100+3)=6.686 redondeando a 7 esto me quiere decir  que se necesitan 7 bit
 ```
 11111111.11111111.11111111.10000000
 
-donde : la cantidad de (0) representan la cantidad de bists del host calculados anteriormente 
+Donde : la cantidad de (0) representan la cantidad de bists del host (0) calculados anteriormente (7)
 
-en decimal : 255.255.255.128  = /25
+En decimal : 255.255.255.128  = /25
+
+```
+ **3. Calculo de host**
+
+- Para calcular la cantidad de host que puede admitir mi nueva mascara de red se procede con la sigiente formula :
+```
+H =2^m-k 
+
+Donde:
+
+h= nuemero de host 
+
+m = cantidad de bits disponibles para calcular el host (cantidad de (0) en el ultimo octeto de mi nueva mascara de red )
+
+k= numero de direcciones IP que seran reservadas
+
+H = 2^7-3
+
+H= 128 - 3
+H= 125 (HOST disponibles )
+```
+
+**4.Salto de Red**
+
+- El salto de red no es mas que el cambio entre sub redes del host se calcula restando una constante a la cantidad total de direcciones Host
+```
+n= k-128
+
+Donde:
+
+k=256
+128= es el numero de redes IP de host calculadas 
+
+n=256-128=128(este es el salto de red )
+```
+
