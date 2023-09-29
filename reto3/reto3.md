@@ -38,7 +38,7 @@ r= numero de ip reservadas (3)
 
 n=log2(100+3)=6.686 redondeando a 7 esto me quiere decir  que se necesitan 7 bits perteneciente al host para poder obtener aproximadamente 100 host para esta sub red 
 ```
-
+...
 - Mi nueva mascara de red seria
 
 ```text
