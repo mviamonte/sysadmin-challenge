@@ -9,20 +9,18 @@
   **1.  Identificar con que clase de direccion IP trabajaremos.**
 
  **CLASE**  |**IP PREDETERMINADA**  | **RANGO** |
-|:------------- |:---------------:| -------------:|
+|:------------- |:---------------:| :-------------:|
 | A         | 255.0.0.0       |0.0.0.0 - 127.255.255.255      |
 | B        | 255.255.0.0       |  128.0.0.0 - 191.255.255.255   |
 | C         |255.255.255.0       | 192.0.0.0 - 223.255.255.255       |
 
-- Se procede a trabajar con una red de clase C especificamente la red con el `IP: 192.150.0.0` la cual nos permitira almacenar las 20 sub redes<
+- Se procede a trabajar con una red de clase C especificamente la red con el `IP: 192.150.0.0`  la cual nos permitira almacenar las 20 sub redes
 
-2Creacion de a nueva mascara de Red
+**2.  Creacion de a nueva mascara de Red**
 
 - Para crear una mascara de red que pueda almacenar los 100 host se comienza  por escribir en `binario` la mascara general de una direccion IP de `clase C`
 
-```text
-
-
+```
 255.255.255.0 en decimal 
 11111111.11111111.11111111.00000000 en binario notese que los (1) representan los bits de red y los (0) los bits pertenecientes al host.
 ```
@@ -54,17 +52,16 @@ En decimal : 255.255.255.128  = /25
 
  3.Calculo de host
 
-- Para calcular la cantidad de host que puede admitir mi nueva mascara de red se procede con la sigiente formula
+- Para calcular la cantidad de redes IP pertenecientes al host que puede admitir mi nueva mascara de red se procede con la sigiente formula
 
-```text
+```
 
-H =2^m-k 
+H =2^m-2
 
 Donde:
 
-h= nuemero de host 
+h= numero de host 
 
-m = cantidad de bits disponibles para calcular el host (cantidad de (0) en el ultimo octeto de mi nueva mascara de red )
 
 k= numero de direcciones IP que seran reservadas
 
@@ -113,11 +110,11 @@ n=5 se necesitan 5 bits de los 32 disponibles para la red
 
 ```
 
-6.Separacion bits de red y bits de host
+**6. Separacion bits de red y bits de host**
 
 - Para separar los bits que le pertenecen a una red y a su host se hace de la siguiente forma
 
-> Entendiendo que si el utimo octeto en ipv4 cuanta con solo 32 bits y ya calculamos anteriormente que 7 le pertencen al host y los que fueron calculados ahora quedaria disponible solamente 20bits que serian usados para la direccion de red< dando como resultado la siguiente tabla .
+> Entendiendo que si el utimo octeto en Ipv4 cuenta con solo 32 bits y ya calculamos anteriormente que 7 le pertencen al host y los que fueron calculados ahora, quedaria disponible solamente 20bits que serian usados para la direccion de red dando como resultado la siguiente tabla .
 
 ```TABLE
 
@@ -148,3 +145,37 @@ IP base : 192.150.0.0
 | 192.150.9.128 	| 192.150.9.255 	| 192.150.9.254 	|  192.150.9.129 - 192.150.253  	|
 
 ```
+
+## Ejercicio #2
+
+- Una (1) red y ciento cincuenta (150) host Direccion IP base 192.168.1.0/24 Direcciones IP reservadas: GW 192.168.1.1. .2, .3 y .4 estan reservadas. Rango util 192.168.1.5 - 192.168.1.254. Pregunta. ¿Cuantas direcciones IP disponibles tiene el ejemplo?
+
+```text
+
+En este ejemplo hay 250 direcciones IP disponibles 
+
+```
+
+## Ejerccio #3
+
+-¿Cual es la direccion de red de la red numero cuatro (4)?
+
+> 192.150.1.128
+
+¿Cual seria el gateway de la ultima red, es decir de la red numero veinte (20)?
+
+> 192.150.9.254
+
+
+¿Si la red diez (10) es la red de servidores web , cual seria una direccion IP valida para un servidor Apache a ser desplegado en dicha red?
+
+> si la red 192.150.4.128 es la red de servidores web .. se usaria la direccion IP 192.150.4.135 ya que no esta reservada y es una red valida
+
+Imagina que la red ocho (8) va a ser la red de "servicios" y decides instalar un DNS, indica dos direcciones IP para tal servicio.
+
+>si la red 192.150.3.128 va  a ser una red de servicios las direcciones ip que utilizaria serian 192.150.3.131 - 192.150.3.132
+
+Indica la direccion de broadcast the la red doce (12)
+
+> 192.150.5.255
+
