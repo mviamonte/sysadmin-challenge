@@ -83,3 +83,27 @@ Una vez resuelto esto, responde las siguientes preguntas, todas asociadas al seg
 
 Un tip. Piensa que en el archivo MD puedes agregar tablas para que la informacion este mas organizada. 
 Exito y suerte!! 
+
+### Reto 4 - Poniendo a prueba los conocimientos -  🧠
+La empresa ACME, esta interesada en migrar su pagina web hacia la nube, para esto, solo cuentan inicialmente con un presupuesto de USD$ 25 💵 para una Prueba de conceptos of "Proof of Concept(PoC) y asi, evaluar si un modelo de Cloud 🌩️ se adapta a sus necesidades, actualmente su servidor web se encuentra sobre Ubuntu. 
+Inicialmente, sus usuarios van a estar ubicados en la ciudad de New York. No hay ningun requerimiento en especifico respecto a los recursos del servidor (CPU, Memoria o disco). Como nota adicional, el servidor debe llevar un nombre personalizado y tener una(s) etiqueta(s) o "tags" para poder identificarlo. Sugerencia, podria usar `ACME` y `POC` (Proof of Concept) como etiquetas, tambien podrias agregar algo como `webserver`. 
+
+#### Paso 1 (4.1)
+Utilizando el servicio **Droplet** de `Digital Ocean` [algo de ayuda aqui](https://www.digitalocean.com/community/conceptual-articles/introduction-to-web-servers)
+1. Configura un servidor web solo el protocolo `HTTP` sin nivel adicional de seguridad. Puedes utilizar `Apache` o `NGINX`
+2. Debe llevar una direccion IP (privada) dentro de los rangos calculados en el **Reto #3** (de ser posible) y debe ser accesible, al menos internamente. Debes encontrar al menos dos metodos de poder verificar que el servidor web esta funcional desde el mismo servidor o desde el exterior. Verifica la disponibilidad de tu IP Base y segmentos calculados [aqui](https://docs.digitalocean.com/products/networking/vpc/concepts/plan-your-network/). 
+3. Utiliza los creditos disponibles en **Digital Ocean**. Recuerda, que al encender un servidor (o cualquier servicio), por cada minuto que este encendido (esto depende del servicio), el mismo estara consumiendo los creditos gratis con los que ahora cuentas. Recuerda que hay un limite de presupuesto del cliente. Toma las medidas necesarias para que no se exceda el presupuesto del cliente. 
+4. Crea el / los acceso(s) necesario(s) para poder administrar el **droplet** remotamente
+5. Considera, que existe la posibilidad de que tengas que configurar el `firewall` interno del sistema operativo para permitir el tráfico del servidor web (entrante y saliente)
+6. ¿Cuales son los comandos necesarios para verificar el estado del servicio asociado al servidor web?
+7. Genera un procedimiento completo de los pasos a ejecutar para la configuracion del servidor web. (solo los comandos) Nota: Te van a servir en el paso 4.2
+8. Dentro de los conceptos de Cloud revisados previamente ¿Dentro de que modelo (`IaaS`, `PaaS`, `SaaS`,etc) encaja el servicio de **droplet**?
+
+#### Paso 2 (4.2)
+
+1. ACME, ha decidido NO utilizar passwords para acceder a sus servidores, es decir, debes crear el procedimiento o pasos para poder acceder y administar el servidor web SIN uso de contraseñas.
+2. Adicionalmente, se debe idear una manera de automatizar el proceso de creacion de los **droplets** es decir. ¿Hay alguna manera de desplegar al menos tres (3) **droplets** en un mismo Datacenter de manera NO interactiva? Estos **droplets** deberan tener la misma configuracion del servidor web, es decir, una vez inicializados y creados, la disponibilidad del servicio web debe ser inmediata. ¿Crees que si el despliegue de estos tres servidores fuese distribuido en tres Datacenters distintos tendrias algun tipo de ventaja o desventaja? De ser asi ¿Como desplegarias los tres servidores de manera simultanea, con los mismos principios mencionados en tres datacenters distintos?  
+*Pista*: Utiliza la siguiente [utilidad desarrollada](https://docs.digitalocean.com/reference/doctl/reference/compute/droplet/create/) por `Digital Ocean` para poder interactuar con las API del servicio de `droplet`
+
+Nota: solo en casos de emergencias, la mayoria de las soluciones para lo que se pide esta [aqui](https://www.digitalocean.com/community/tutorial-series/getting-started-with-cloud-computing) ⚠️
+
