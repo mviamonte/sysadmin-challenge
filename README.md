@@ -90,11 +90,13 @@ Inicialmente, sus usuarios van a estar ubicados en la ciudad de New York. No hay
 
 #### Paso 1 (4.1)
 
-1. El servidor web, por ahora, solo se va a realizar por el protocolo `HTTP` sin nivel adicional de seguridad.
+1. Configura un servidor web solo el protocolo `HTTP` sin nivel adicional de seguridad. Puedes utilizar `Apache` o `NGINX`
 2. Debe llevar una direccion IP (privada) dentro de los rangos calculados en el **Reto #3** y debe ser accesible, al menos internamente. Debes encontrar al menos dos metodos de poder verificar que el servidor web esta funcional desde el mismo servidor o desde el exterior. 
-3. Podrias utilizar el servicio de **droplet** utilizando los niveles gratuitos de **Digital Ocean**. Recuerda, que al encender un servidor, por cada minuto que este encendido, el mismo estara consumiendo los creditos gratis con los que ahora cuentas. Recuerda que hay un limite de presupuesto del cliente.
-4. ¿Cual consideras que debe ser el mejor software para el servidor web? Una vez decidido, procede a ejecutar la instalacion y configuracion del mismo, recomiendo guardar y documentar todos los pasos necesarios para tal fin.
-5. Se deben crear el / los acceso(s) necesario(s) para poder administrar el **droplet**
+3. Podrias utilizar el servicio de **droplet** utilizando los creditos disponibles en **Digital Ocean**. Recuerda, que al encender un servidor, por cada minuto que este encendido, el mismo estara consumiendo los creditos gratis con los que ahora cuentas. Recuerda que hay un limite de presupuesto del cliente. Toma las medidas necesarias para que no se exceda el presupuesto del cliente. 
+4. Crea el / los acceso(s) necesario(s) para poder administrar el **droplet** remotamente
+5. Considera, que existe la posibilidad de que tengas que configurar el `firewall` interno del sistema operativo para permitir el tráfico del servidor web
+6. ¿Cuales son los comandos necesarios para verificar el estado del servicio asociado al servidor web?
+7. Genera un procedimiento completo de los pasos a ejecutar para la configuracion del servidor web. (solo los comandos) Nota: Te van a servir en el paso 4.2
 
 #### Paso 2 (4.2)
 
