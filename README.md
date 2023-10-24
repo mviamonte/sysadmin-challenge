@@ -103,4 +103,5 @@ Inicialmente, sus usuarios van a estar ubicados en la ciudad de New York. No hay
 1. ACME, ha decidido NO utilizar passwords para acceder a sus servidores, es decir, debes crear el procedimiento o pasos para poder acceder y administar el servidor web SIN uso de contraseñas.
 2. Adicionalmente, se debe idear una manera de automatizar el proceso de creacion de los **droplets** es decir. ¿Hay alguna manera de desplegar al menos tres (3) **droplets** en un mismo Datacenter de manera NO interactiva? Estos **droplets** deberan tener la misma configuracion del servidor web, es decir, una vez inicializados y creados, la disponibilidad del servicio web debe ser inmediata. ¿Crees que si el despliegue de estos tres servidores fuese distribuido en tres Datacenters distintos tendrias algun tipo de ventaja o desventaja? De ser asi ¿Como desplegarias los tres servidores de manera simultanea, con los mismos principios mencionados en tres datacenters distintos?
 
+Nota: solo en casos de emergencias, [pincha aqui](https://www.digitalocean.com/community/tutorial-series/getting-started-with-cloud-computing) ⚠️
 
