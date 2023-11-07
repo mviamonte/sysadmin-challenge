@@ -115,18 +115,20 @@ Sin embargo, con la intencion de que la infraestructura a crearse puede ser mane
 2. Ademas de Hashicorp Terraform ¿Que otras herramientas ofrecen capacidades similares?
 3. ¿Que tipo de lenguaje es `Terraform`?
 4. ¿Cuales son los componentes principales de la arquitectura de Terraform? Escribe el detalle de cada uno.
-5. ¿Que son las expresiones dentro de terraform?
-6. ¿Cuales son los pasos a ejecutar para utilizar apropiadamente Terraform?
-7. ¿Cual es la principal utilidad de Terraform?
-8. ¿Puede Terraform resolver el problema inicial de nuestro cliente ACME?
-9. ¿Que pasaria si ACME, en un tiempo indeterminado, decide migrar su aplicacion a otro proveedor de Cloud tal como Amazon Web Service o Microsoft Azure? ¿Puede seguir utilizando Terraform? ¿Existe una herramienta que pueda sustituir el uso de Terraform? Si la respuesta es si. ¿Cuales son las ventajas y desventajas?
+5. Indaga en el detalle de los siguientes conceptos: Plugin, Providers, variables y el orden de prioridad de las mismas.
+6. ¿Que son las expresiones dentro de terraform?
+7. ¿Cuales son los pasos a ejecutar para utilizar apropiadamente Terraform?
+8. ¿Cual es la principal utilidad de Terraform?
+9. ¿Puede Terraform resolver el problema inicial de nuestro cliente ACME?
+10. ¿Que pasaria si ACME, en un tiempo indeterminado, decide migrar su aplicacion a otro proveedor de Cloud tal como Amazon Web Service o Microsoft Azure? ¿Puede seguir utilizando Terraform? ¿Existe una herramienta que pueda sustituir el uso de Terraform? Si la respuesta es si. ¿Cuales son las ventajas y desventajas?
 
 #### Paso 2 (5.2)
 Teniendo claros todos los conceptos, hagamos una pequeña prueba con `Terraform`
 1. Instalar la version mas reciente de `terraform` en tu computadora.
 2. Crea un directorio llamado `proyecto_final`
-3. Crear una configuracion que tenga la capacidad de crear un recurso `random` dentro del archivo `main.tf` en el directorio previamente creado. Este recurso creara una cadena de texto (string) aleatoria. [Revisa esta documentacion para entender el ejemplo](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/string). Ten en cuenta que para cada recurso, hay argumentos, expresiones y atributos. ¿Sabes cual es la diferencia entre ellos? Tambien, ten en cuenta que inicialmente, solo deberias conocer los argumentos requeridos, para crear cada recurso, posteriormente y dependiendo del caso, usaras algunos argumentos adicionales. 
+3. Crear una configuracion que tenga la capacidad de crear un recurso `random` dentro del archivo `main.tf` (este archivo realmente se puede llamar `pepito.tf`y Terraform lo entendera igual) en el directorio previamente creado. Este recurso creara una cadena de texto (string) aleatoria. [Revisa esta documentacion para entender el ejemplo](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/string). Ten en cuenta que para cada recurso, hay argumentos, expresiones y atributos. ¿Sabes cual es la diferencia entre ellos? Tambien, ten en cuenta que inicialmente, solo deberias conocer los argumentos requeridos, para crear cada recurso, posteriormente y dependiendo del caso, usaras algunos argumentos adicionales. 
 4. Crea un archivo llamado `versions.tf` dentro del mismo directorio y agrega los bloques de codigo correspondientes que te permitan crear el recurso anterior utilizando el `provider` random, en el mismo link anterior, valida como se utiliza este proveedor. 
 5. Utiliza todos los comandos de `terraform` necesarios, para que tu configuracion, pueda crear satisfactoriamente, una cadena del tipo random de acuerdo a lo expresado en el archivo `main.tf`.
 6. ¿Que comandos o utilidades te permiten validar la creacion de ese recurso tipo `random`? ¿Tienes todos los archivos necesarios dentro de tu proyecto?
+7. Ten en cuenta que reciemente, si hiciste el paso de `git fetch` o de `git pull` en el repositorio, ahora encontraras un archivo llamado `.gitignore`. ¿Que te llama la atencion de ese archivo? ¿Cual crees que sea su finalidad?
 
