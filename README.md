@@ -135,5 +135,16 @@ Teniendo claros todos los conceptos, hagamos una pequeña prueba con `Terraform`
 6. ¿Que comandos o utilidades te permiten validar la creacion de ese recurso tipo `random`? ¿Tienes todos los archivos necesarios dentro de tu proyecto?
 7. Ten en cuenta que reciemente, si hiciste el paso de `git fetch` o de `git pull` en el repositorio, ahora encontraras un archivo llamado `.gitignore`. ¿Que te llama la atencion de ese archivo? ¿Cual crees que sea su finalidad?
 
+A little help of my friends 😙
+Lectura general
+https://blog.awsfundamentals.com/what-is-terraform
+Donde conseguir casi todo lo que se pide en el reto
+https://developer.hashicorp.com/terraform/language/expressions/types
+https://developer.hashicorp.com/terraform/language/expressions/type-constraints
+https://developer.hashicorp.com/terraform/language/providers
+https://developer.hashicorp.com/terraform/language
+Algunos ejemplos
+https://developer.hashicorp.com/terraform/tutorials/configuration-language
+
 [^1]: Ten en cuenta que para cada recurso, hay argumentos o referencias a valores (previamente preguntado), expresiones y atributos. Tambien, ten en cuenta que inicialmente, solo deberias conocer los argumentos requeridos, para crear el recurso llamado `random`, posteriormente y dependiendo del caso, usaras algunos argumentos adicionales. 
 
