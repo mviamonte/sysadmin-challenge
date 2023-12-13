@@ -134,6 +134,8 @@ Teniendo claros todos los conceptos, hagamos una pequeña prueba con `Terraform`
 5. Utiliza todos los comandos de `terraform` necesarios, para que tu configuracion, pueda crear satisfactoriamente, una cadena del tipo random de acuerdo a lo expresado en el archivo `main.tf`. Recuerda que necesitas el contenido de ambos archivos, es decir el de `main.tf` y el de `versions.tf`
 6. ¿Que comandos o utilidades te permiten validar la creacion de ese recurso tipo `random`? ¿Tienes todos los archivos necesarios dentro de tu proyecto?
 7. Ten en cuenta que reciemente, si hiciste el paso de `git fetch` o de `git pull` en el repositorio, ahora encontraras un archivo llamado `.gitignore`. ¿Que te llama la atencion de ese archivo? ¿Cual crees que sea su finalidad?
+8. Luego de haber ejecutado satisfactoriamente los comandos anteriores. Examina cuidadosamente el contenido del directorio `proyecto_final`. ¿Notas alguna diferencia?
+9. Basado en la pregunta 7 y 8. ¿Por que todos estos nuevos archivos no aparecen despues de ejecutar el `terraform plan` y el `terraform apply` en la salida del `git status`? ¿Por que hay un archivo asociado a terraform que si aparece en el `git status`?
 
 A little help of my friends 😙
 Lectura general
