@@ -126,26 +126,25 @@ Antes de hacer o escribir cualquier linea de código, vayamos investigando lo si
 12. ¿Que pasaria si ACME, en un tiempo indeterminado, decide migrar su aplicacion a otro proveedor de Cloud tal como Amazon Web Service o Microsoft Azure? ¿Puede seguir utilizando Terraform? ¿Existe una herramienta que pueda sustituir el uso de Terraform? Si la respuesta es si. ¿Cuales son las ventajas y desventajas?
 
 #### Paso 2 (5.2)
-Teniendo claros todos los conceptos, hagamos una pequeña prueba con `Terraform`
+Teniendo claros todos los conceptos, hagamos una pequeña prueba con `Terraform`. Recuerda, crear un procedimiento paso a paso incluyendo las salidas de los comandos que consideres necesarios, comandos utilizados, etc. 
 1. Instalar la version mas reciente de `terraform` en tu computadora.
 2. Crea un directorio llamado `proyecto_final`
 3. En el directorio creado anteriormente, crea un archivo llamado `main.tf`. Este archivo debe llevar la configuracion con la capacidad de crear un recurso `random` (este archivo realmente se puede llamar `pepito.tf`y `Terraform` lo entendera igual). La intencion de este recurso es crear una cadena de texto (string) aleatoria en base a los argumentos que le proporciones. [Revisa esta documentacion para entender el ejemplo](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/string). [^1] 
-4. Crea un archivo llamado `versions.tf` dentro del mismo directorio y agrega los bloques de codigo correspondientes que te permitan crear el recurso anterior utilizando el `provider` random, en el mismo link anterior pero yendo a la documentacion del [provider](https://registry.terraform.io/providers/hashicorp/random/latest/docs) en si, valida como se utiliza este proveedor. Especificamente, revisa el boton morado en la parte superior que indica **USE PROVIDER**
+4. Crea un archivo llamado `versions.tf` dentro del mismo directorio y agrega los bloques de codigo correspondientes que te permitan crear el recurso anterior utilizando el `provider` random, en el mismo link anterior pero yendo a la documentacion del [provider](https://registry.terraform.io/providers/hashicorp/random/latest/docs) en si, valida como se utiliza este `provider`. Especificamente, revisa el boton morado en la parte superior que indica **USE PROVIDER**
 5. Utiliza todos los comandos de `terraform` necesarios, para que tu configuracion, pueda crear satisfactoriamente, una cadena del tipo random de acuerdo a lo expresado en el archivo `main.tf`. Recuerda que necesitas el contenido de ambos archivos, es decir el de `main.tf` y el de `versions.tf`
-6. ¿Que comandos o utilidades te permiten validar la creacion de ese recurso tipo `random`? ¿Tienes todos los archivos necesarios dentro de tu proyecto?
-7. Ten en cuenta que reciemente, si hiciste el paso de `git fetch` o de `git pull` en el repositorio, ahora encontraras un archivo llamado `.gitignore`. ¿Que te llama la atencion de ese archivo? ¿Cual crees que sea su finalidad?
-8. Luego de haber ejecutado satisfactoriamente los comandos anteriores. Examina cuidadosamente el contenido del directorio `proyecto_final`. ¿Notas alguna diferencia?
-9. Basado en la pregunta 7 y 8. ¿Por que todos estos nuevos archivos no aparecen despues de ejecutar el `terraform plan` y el `terraform apply` en la salida del `git status`? ¿Por que hay un archivo asociado a terraform que si aparece en el `git status`?
+6. ¿Cual secuencia basica de comandos `terraform` te permiten validar la creacion de ese recurso `random` dentro de tu proyecto?
+7. Examina y analiza, de haber sido ejecutado satisfactoriamente, la salida de cada uno de estos tres comandos de la secuencia básica de comandos `terraform`
+8. Luego de haber ejecutado satisfactoriamente los tres comandos básicos de `terraform`. ¿Notas alguna diferencia dentro del directorio `proyecto_final`? Comenta cuales archivos o directorios llaman tu atencion y agrega tus conclusiones. 
 
-A little help from my friends 😙
-Lectura general  
+A little help from my friends 😙  
+#### Lectura general  
 https://blog.awsfundamentals.com/what-is-terraform   
-Donde conseguir casi todo lo que se pide en el reto  
+#### Donde conseguir casi todo lo que se pide en el reto  
 https://developer.hashicorp.com/terraform/language/expressions/types  
 https://developer.hashicorp.com/terraform/language/expressions/type-constraints  
 https://developer.hashicorp.com/terraform/language/providers  
 https://developer.hashicorp.com/terraform/language  
-Algunos ejemplos  
+#### Algunos ejemplos  
 https://developer.hashicorp.com/terraform/tutorials/configuration-language
 
 [^1]: Ten en cuenta que para cada recurso, hay argumentos o referencias a valores (previamente preguntado), expresiones y atributos. Tambien, ten en cuenta que inicialmente, solo deberias conocer los argumentos requeridos, para crear el recurso llamado `random`, posteriormente y dependiendo del caso, usaras algunos argumentos adicionales. 
