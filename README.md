@@ -137,15 +137,15 @@ Teniendo claros todos los conceptos, hagamos una pequeña prueba con `Terraform`
 8. Luego de haber ejecutado satisfactoriamente los comandos anteriores. Examina cuidadosamente el contenido del directorio `proyecto_final`. ¿Notas alguna diferencia?
 9. Basado en la pregunta 7 y 8. ¿Por que todos estos nuevos archivos no aparecen despues de ejecutar el `terraform plan` y el `terraform apply` en la salida del `git status`? ¿Por que hay un archivo asociado a terraform que si aparece en el `git status`?
 
-A little help of my friends 😙
-Lectura general
-https://blog.awsfundamentals.com/what-is-terraform
-Donde conseguir casi todo lo que se pide en el reto
-https://developer.hashicorp.com/terraform/language/expressions/types
-https://developer.hashicorp.com/terraform/language/expressions/type-constraints
-https://developer.hashicorp.com/terraform/language/providers
-https://developer.hashicorp.com/terraform/language
-Algunos ejemplos
+A little help from my friends 😙
+Lectura general  
+https://blog.awsfundamentals.com/what-is-terraform   
+Donde conseguir casi todo lo que se pide en el reto  
+https://developer.hashicorp.com/terraform/language/expressions/types  
+https://developer.hashicorp.com/terraform/language/expressions/type-constraints  
+https://developer.hashicorp.com/terraform/language/providers  
+https://developer.hashicorp.com/terraform/language  
+Algunos ejemplos  
 https://developer.hashicorp.com/terraform/tutorials/configuration-language
 
 [^1]: Ten en cuenta que para cada recurso, hay argumentos o referencias a valores (previamente preguntado), expresiones y atributos. Tambien, ten en cuenta que inicialmente, solo deberias conocer los argumentos requeridos, para crear el recurso llamado `random`, posteriormente y dependiendo del caso, usaras algunos argumentos adicionales. 
