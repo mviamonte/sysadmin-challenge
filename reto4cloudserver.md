@@ -122,7 +122,7 @@ Este comando te mostrará el estado actual de Apache en el servidor. Si Apache e
 
 
 Para este ejerccio decidi utilizar una **direccion IP** que estuvuese dentro del rango estipulado como red privada. 
- La direccion `IP 172.16.0.2/20` la cual por ser una red cuya mascara es /20 podria tener hasta un maximo de 4096 subredes.
+ La direccion `IP 172.16.0.2/20` la cual por ser una red cuya mascara /20 podria tener hasta un maximo de 4096 subredes.
 
  Entre los metodos exitentes para verificar si un servidor esta funcional estan : 
 
@@ -155,49 +155,49 @@ ping 172.16.0.2
 
  Pasos para poder administrar el droplet de manera remota : 
 
- - **Paso 1**: Accede a tu cuenta de DigitalOcean a través de su sitio web.
+ - **Paso 1**: Acceder a la cuenta de DigitalOcean a través de su sitio web.
 
-- **Paso 2**: En el panel de control, selecciona la sección "Droplets" y elige el droplet al que deseas acceder de forma remota.
+- **Paso 2**: En el panel de control, seleccionar la sección "Droplets" y eligir el droplet al que deseas acceder de forma remota.
 
-- Paso 3: Una vez que estés en la página de detalles de tu droplet, busca la sección de "Acceso" o "Access" en el menú lateral.
+- **Paso 3**: Una vez que estemos en la página de detalles de nuestro droplet, buscamos la sección de "Acceso" o "Access" en el menú lateral.
 
-- Paso 4: En la sección de "Acceso", encontrarás la opción de "Consola" que te permite acceder a tu droplet a través de una interfaz de línea de comandos en el navegador. También encontrarás la opción de "Acceso SSH" que te permite conectarte a tu droplet a través de SSH.
+- **Paso 4**: En la sección de "Acceso", encontraremos la opción de "Consola" que nos permite acceder a nuestro droplet a través de una interfaz de línea de comandos en el navegador. También encontraremos la opción de "Acceso SSH" que nos permite conectar a nuestro droplet a través de SSH.
 
-- Paso 6: Copia la dirección IP de tu droplet desde la página de detalles y utiliza el cliente SSH para conectarte a tu droplet. Por ejemplo, en el terminal, escribe ssh root@tu_direccion_ip y presiona Enter. Reemplaza "tu_direccion_ip" con la dirección IP real de tu droplet.
+- **Paso 6**: Copiamos la dirección IP de nuestro droplet desde la página de detalles y utilizamos el cliente SSH para conectarnos a nuestro droplet. Por ejemplo, en el terminal, escribimos ssh root@tu_direccion_ip y presionamos Enter. Reemplazamos "tu_direccion_ip" con la dirección IP real de tu droplet.
 
-- Paso 7: Si es la primera vez que te conectas a tu droplet desde tu computadora, es posible que se te pida confirmar la autenticidad de la conexión. Responde "yes" para continuar.
+- **Paso 7**: Si es la primera vez que nos conectamos a nuestro droplet desde la  computadora, es posible que se nos pida confirmar la autenticidad de la conexión. Respondemos "yes" para continuar.
 
-- Paso 8: Luego, se te pedirá que ingreses la contraseña de tu droplet. Una vez que ingreses la contraseña, habrás establecido una conexión remota a tu droplet y podrás administrarlo a través de la línea de comandos.
+- **Paso 8**: Luego, se nos pedirá que ingresemos la contraseña de nuestro droplet. Una vez que ingresamos la contraseña, habremos establecido una conexión remota a nuestro droplet y podremos administrarlo a través de la línea de comandos.
 
 
 5. Considera, que existe la posibilidad de que tengas que configurar el `firewall` interno del sistema operativo para permitir el tráfico del servidor web (entrante y saliente)
 
 Para configurar el fireware desde una consola y asi permitir el trafico saliente y entrante se realizan los siguientes pasos 
 
-- Paso 1 : Verificar el estado actual del firewall
+- **Paso 1** : Verificar el estado actual del firewall.
 
 Puedes verificar el estado actual del firewall ejecutando el siguiente comando:
 ``` 
 sudo ufw status
 ```
 Esto mostrara en que estado se encuentra el firewall y las reglas que estan en vigor .
- - Paso 2: Habilitar el firewall
+ - **Paso 2**: Habilitar el firewall
  ```
  sudo ufw enable
  ```
- - Paso 3: Permitir el tráfico para servicios específicos
+ - **Paso 3**: Permitir el tráfico para servicios específicos
 
  ```
  sudo ufw allow 80/tcp (habilita el trafico entrante en el puerto 80 http)
 
  sudo ufw allow 443/tcp (habilita el trafico entrante para el puerto 443 HTTPS)
  ```
- - Paso 4: Verificar las reglas
+ - **Paso 4**: Verificar las reglas
  ```
  sudo ufw status
  ```
 
- - Paso 5: Habilitar el firewall para que se inicie en el arranque del sistema
+ - **Paso 5**: Habilitar el firewall para que se inicie en el arranque del sistema
 
  ```
  sudo ufw enable 
@@ -205,7 +205,7 @@ Esto mostrara en que estado se encuentra el firewall y las reglas que estan en v
 
 6. ¿Cuales son los comandos necesarios para verificar el estado del servicio asociado al servidor web?
 
-Para verificar el estado del servicio asociado al servidor web, puedes utilizar el siguiente comando en un sistema Linux:
+Para verificar el estado del servicio asociado al servidor web, puedemos utilizar el siguiente comando en un sistema Linux:
 
 ```
 sudo systemctl status apache2
@@ -219,14 +219,67 @@ El servicio de "droplet" de DigitalOcean encaja dentro del modelo de infraestruc
 
 1. ACME, ha decidido NO utilizar passwords para acceder a sus servidores, es decir, debes crear el procedimiento o pasos para poder acceder y administar el servidor web SIN uso de contraseñas.
 
-Para administrar un servidor web sin el uso de contraseñas, puedes utilizar la autenticación basada en claves SSH. Los pasos para configurarla son los siguientes : 
+Para administrar un servidor web sin el uso de contraseñas, puedemos utilizar la autenticación basada en claves SSH. Los pasos para configurarla son los siguientes :
 
-- Generar un par de claves SSH: En la máquina local se ejecuta el siguiente comando:
+- **Generar un par de claves SSH:**  En la máquina local se ejecuta el siguiente comando:
+
 ```
-   ssh-keygen -t rsa
+ssh-keygen 
+```
+- **Copiar la clave pública al servidor:**  Una vez generadas las claves, copia la clave pública a tu servidor web. Puedes hacerlo con el siguiente comando:
+
+```
+   
+cat ~/.ssh/id_rsa.pub
+
+```
+- Iniciar sesión sin contraseña: 
+```
+ssh daniel@webserverAcmeny3
 ```
 
+2. Adicionalmente, se debe idear una manera de automatizar el proceso de creacion de los **droplets** es decir. ¿Hay alguna manera de desplegar al menos tres (3) **droplets** en un mismo Datacenter de manera NO interactiva? Estos **droplets** deberan tener la misma configuracion del servidor web, es decir, una vez inicializados y creados, la disponibilidad del servicio web debe ser inmediata.
 
-2. Adicionalmente, se debe idear una manera de automatizar el proceso de creacion de los **droplets** es decir. ¿Hay alguna manera de desplegar al menos tres (3) **droplets** en un mismo Datacenter de manera NO interactiva? Estos **droplets** deberan tener la misma configuracion del servidor web, es decir, una vez inicializados y creados, la disponibilidad del servicio web debe ser inmediata. ¿Crees que si el despliegue de estos tres servidores fuese distribuido en tres Datacenters distintos tendrias algun tipo de ventaja o desventaja? De ser asi ¿Como desplegarias los tres servidores de manera simultanea, con los mismos principios mencionados en tres datacenters distintos?  
+Para crear varios droplets de manera simultanea en el mismo Datacenter y con la misma configuracion se puede utilizar el siguiente comando :
+
+```
+doctl compute droplet create nombre-del-droplet --size tamaño-del-droplet --image imagen-del-droplet --region nombre-del-datacenter clave ssh 
+```
+Donde se debe tener en consideracion los siguientes argumentos 
+
+- **Nombre-del-droplet**: el nombre del droplet que se ha elegido.
+
+- **size** : tamaño del droplet a utilizar.
+
+- **image** : es un instantanea que contiene el sistema operativo y su configuracion.
+
+- **region**: lugar donde se encuentra el database del servidor 
+
+- **clave ssh** : clave de nuestro servior o llave finger print ustilizada para ingresar a nuestro servidor y por ende para crear el droplet.
+
+#### Ejercicio: Utilizando los datos anteriores crear 3 droplets que esten dentro del mismo datacenter ademas que tengan la misma configuracion.
+
+>doctl compute droplet create ny1 ny2 ny3 --size s-1vcpu-1gb --image 146561575 --region nyc3
+
+
+¿Crees que si el despliegue de estos tres servidores fuese distribuido en tres Datacenters distintos tendrias algun tipo de ventaja o desventaja? De ser asi ¿Como desplegarias los tres servidores de manera simultanea, con los mismos principios mencionados en tres datacenters distintos?  
 *Pista*: Utiliza la siguiente [utilidad desarrollada](https://docs.digitalocean.com/reference/doctl/reference/compute/droplet/create/) por `Digital Ocean` para poder interactuar con las API del servicio de `droplet`
 
+Desplegar los servidores en tres datacenters distintos puede tener ventajas y desventajas dependiendo de tus necesidades y el contexto específico de tu aplicación.
+#### Ventajas:
+- Redundancia geográfica: 
+
+Al distribuir los servidores en diferentes datacenters, reduces el riesgo de que un evento localizado (como un corte de energía o un desastre natural) afecte a todos tus servidores al mismo tiempo.
+
+- Mejor rendimiento para usuarios 
+geográficamente dispersos: Si tus usuarios están distribuidos en diferentes regiones geográficas, desplegar servidores en datacenters cercanos a ellos puede mejorar la latencia y la velocidad de carga de tu aplicación.
+
+#### Desventajas 
+
+- Complejidad operativa: 
+Mantener y coordinar servidores distribuidos en múltiples datacenters puede ser más complejo que tenerlos todos en un solo lugar.
+- Costos adicionales:
+ Desplegar en múltiples datacenters puede implicar costos adicionales, tanto en términos de infraestructura como de operaciones.
+
+- Cumplimiento normativo:
+ Algunas regulaciones requieren que los datos se almacenen en ubicaciones geográficas específicas. Distribuir los servidores en diferentes datacenters puede ayudarte a cumplir con estas regulaciones.
