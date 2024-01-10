@@ -8,7 +8,7 @@ _<center> <h2>**Servidores Web **</h2> </center>_
 
  _<center> <h3>¿ Que es un servidor Web ?</h2> </center>_
 
->Un servidor web es un programa de software o un sistema de hardware que proporciona contenido o servicios a los usuarios a través de internet. Este contenido puede ser páginas web, archivos, aplicaciones web, servicios de correo electrónico, entre otros.
+>Un servidor web es un programa de software o un sistema de hardware que proporciona contenido o servicios a los usuarios a través de internet, donde el  hardware juega un papel crucial en el rendimiento y la capacidad de un servidor web. Los componentes clave del hardware de un servidor web incluyen el procesador, la memoria RAM, el almacenamiento (disco duro o SSD), la tarjeta de red y, en algunos casos, tarjetas aceleradoras de red,  ayudando a proporcionar contenido a travez de internet. Este contenido puede ser páginas web, archivos, aplicaciones web, servicios de correo electrónico, entre otros.
 
 _<center> <h3>Cloud servers </h2> </center>_
 
@@ -23,7 +23,7 @@ _<center> <h3>Configuracion y creacion de un servidor web </h2> </center>_
 
 >Hay varias maneras de configurar y crear un servidor web, dependiendo de tus necesidades y conocimientos técnicos. Aquí hay algunas opciones comunes:
 
-1. Usar un proovedor de alojamiento web 
+1. Usar un proovedor de cloud  
 
 > Se puede  contratar los servicios de un proveedor de alojamiento web, como `Amazon Web Services (AWS)`, `Google Cloud Platform`,  `Digital Ocean` , o un proveedor de alojamiento compartido. Estos proveedores suelen ofrecer herramientas para configurar fácilmente un servidor web y alojar nuestro sitio.
 
@@ -40,7 +40,7 @@ _<center> <h3>Configuracion y creacion de un servidor web </h2> </center>_
 
 _<center> <h3>Digital Ocean  </h3> </center>_
 
->Es un proveedor de alojamiento web y servicios de infraestructura en la nube. Ofrece una variedad de servicios, incluyendo servidores virtuales, almacenamiento en la nube, bases de datos y otros recursos para alojar aplicaciones y sitios web.
+>Es un proveedor de servicios de infraestructura en la nube. Ofrece una variedad de servicios, incluyendo servidores virtuales, almacenamiento en la nube, bases de datos y otros recursos para alojar aplicaciones y sitios web.
 
 _<center> <h3>¿ Como crear y configurar un servidor web usando Digital Ocean? </h2> </center>_
 
@@ -131,7 +131,7 @@ Para este ejerccio decidi utilizar una **direccion IP** que estuvuese dentro del
  - **Comando systemctl** : Puedes utilizar el comando `systemctl` para verificar el estado de los servicios en el servidor. Por ejemplo, systemctl status <nombre del servicio> te mostrará si un servicio específico está en ejecución (en este caso cargo la pagina de `Apache`).
 
 
- - **Navegador web**: Si el servidor aloja un sitio web, puedes intentar acceder a él desde un navegador web. Si el sitio web carga correctamente, es probable que el servidor esté operativo.
+ - **Navegador web**: Si el servidor aloja un sitio web, puedes intentar acceder a él desde un navegador web. Si el sitio web carga correctamente, nuestro servidor web estaria operativo.
 
 Para verificar la disponibilidad de mi IP base use el comando : 
 ```
@@ -219,14 +219,14 @@ El servicio de "droplet" de DigitalOcean encaja dentro del modelo de infraestruc
 
 1. ACME, ha decidido NO utilizar passwords para acceder a sus servidores, es decir, debes crear el procedimiento o pasos para poder acceder y administar el servidor web SIN uso de contraseñas.
 
-Para administrar un servidor web sin el uso de contraseñas, puedemos utilizar la autenticación basada en claves SSH. Los pasos para configurarla son los siguientes :
+Para administrar un servidor web sin el uso de contraseñas, puedemos utilizar la autenticación basada en llaves SSH. Los pasos para configurarla son los siguientes :
 
-- **Generar un par de claves SSH:**  En la máquina local se ejecuta el siguiente comando:
+- **Generar un par de llaves SSH:**  En la máquina local se ejecuta el siguiente comando:
 
 ```
 ssh-keygen 
 ```
-- **Copiar la clave pública al servidor:**  Una vez generadas las claves, copia la clave pública a tu servidor web. Puedes hacerlo con el siguiente comando:
+- **Copiar la llave pública al servidor:**  Una vez generadas las llaves, copia la llaves pública a tu servidor web. Puedes hacerlo con el siguiente comando:
 
 ```
    
@@ -243,7 +243,7 @@ ssh daniel@webserverAcmeny3
 Para crear varios droplets de manera simultanea en el mismo Datacenter y con la misma configuracion se puede utilizar el siguiente comando :
 
 ```
-doctl compute droplet create nombre-del-droplet --size tamaño-del-droplet --image imagen-del-droplet --region nombre-del-datacenter clave ssh 
+doctl compute droplet create nombre-del-droplet --size tamaño-del-droplet --image imagen-del-droplet --region nombre-del-datacenter llave ssh 
 ```
 Donde se debe tener en consideracion los siguientes argumentos 
 
@@ -255,7 +255,7 @@ Donde se debe tener en consideracion los siguientes argumentos
 
 - **region**: lugar donde se encuentra el database del servidor 
 
-- **clave ssh** : clave de nuestro servior o llave finger print ustilizada para ingresar a nuestro servidor y por ende para crear el droplet.
+- **llave ssh** : llave de nuestro servior o llave finger print ustilizada para ingresar a nuestro servidor y por ende para crear el droplet.
 
 #### Ejercicio: Utilizando los datos anteriores crear 3 droplets que esten dentro del mismo datacenter ademas que tengan la misma configuracion.
 
