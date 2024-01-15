@@ -79,11 +79,35 @@ comandos :
  
 4. Flags en línea de comandos: Al ejecutar comandos de Terraform, se pueden proporcionar valores para las variables directamente en la línea de comandos utilizando flags específicos. 
 
+- data : Se utiliza para consultar y obtener información sin necesariamente crear o modificar recursos.
+
+- resouces: Son utilizados para definir y gestionar los componentes de la infraestructura que se desean crear, modificar o eliminar en un proveedor de infraestructura específico, permitiendo una gestión eficiente y escalable de la infraestructura como código.
+
+- terraform state: se refiere al estado actual de la infraestructura gestionada por Terraform. Este estado incluye información sobre los recursos que Terraform está gestionando, como sus atributos, relaciones y metadatos
+```
+
 7. ¿Que son las expresiones dentro de Terraform? Explica el concepto de tipo y valores. Da ejemplos de los tipos string, number y bool
 Segun esta documentacion, explica brevemente a que se le conoce como "referencias a valores".
 
+ Las expresiones son utilizadas para representar y manipular valores
+ Existen diferentes tipos de valores, como string (cadena de texto), number (número) y bool (booleano). Cada tipo de valor tiene sus propias reglas y operaciones asociadas. A continuación, algunos ejemplos de estos tipos de valores:
+  ```
+- string: (hola mundo)
+- number: 82
+- bool: true
+ ```
+
 8. ¿Puede Terraform resolver el problema inicial de nuestro cliente ACME?
 
+si, ya que con el uso de terraforn no solo se pueden automatizar los procesos de contruccion de servidores sino que tambien se podria usar el recurso de control de versiones del mismo a travez de Git, lo cual tambien facilitaria la colaboracion entre equipos.
+
 9. ¿Que pasaria si ACME, en un tiempo indeterminado, decide migrar su aplicacion a otro proveedor de Cloud tal como Amazon Web Service o Microsoft Azure? ¿Puede seguir utilizando Terraform? ¿Existe una herramienta que pueda sustituir el uso de Terraform? Si la respuesta es si. ¿Cuales son las ventajas y desventajas?
+
+En el caso que ACME quiera migrar podria hacerlo sin ningun problema ya que Terraform es compatibe con multiples operadores de servicio en la nube. lo que significa que los archivos de configuracion pueden ser adaptados a otro entorno de infraestructura.
+
+En cuanto a una herramienta que pueda sustituir el uso de Terraform, existen otras herramientas de infraestructura como código, como AWS CloudFormation, Azure Resource Manager, Google Cloud Deployment Manager, entre otras. Sin embargo, cada una de estas herramientas tiene sus propias ventajas y desventajas en comparación con Terraform.
+
+Algunas ventajas de Terraform incluyen su sintaxis clara y legible, su soporte para múltiples proveedores de servicios en la nube, su comunidad activa y su capacidad para gestionar recursos de forma modular y reutilizable.
+Por otro lado, algunas desventajas de Terraform podrían incluir una curva de aprendizaje inicial para aquellos que no están familiarizados con su sintaxis y conceptos, así como posibles limitaciones en la gestión de recursos específicos de ciertos proveedores de servicios en la nube.
 
 ## Paso 2 (5.2)
