@@ -36,9 +36,48 @@ Terraform utiliza un lenguaje de dominio específico (DSL, por sus siglas en ing
 4. ¿Cual es la principal utilidad de Terraform?
 Menciona los comandos principales utilizados en Terraform.
 
-5. ¿Cuales son los componentes principales en una configuracion de Terraform? Escribe el detalle de los componentes bases.
+La principal utilidad de Terraform es la automatización de la infraestructura, permitiendo a los equipos definir, configurar y desplegar recursos de infraestructura de forma predecible y repetible.
 
+comandos :
+```
+- init : "inicia el modulo de trabajo en terraform preparando el directorio de trabajo para utilizar otros comandos.
+
+- plan : muestra los cambios que terraformn realizara en la infraestructura, permitiendo revisarlos antes de aplicarlos.
+ 
+- apply : ejecuta toda la configuracion y crea la infraestructura de la plataforma 
+
+- destroy : elimina todos los recursos definidos en los archivos de configuracion de terraform.
+
+```
+
+5. ¿Cuales son los componentes principales en una configuracion de Terraform? Escribe el detalle de los componentes bases.
+```
+* Archivos de configuracion (.tf): contienen la descripcion de la infraestructura que se desea gestionar.
+
+* Proveedores: Son componentes gestionan recursos del proveedor  y  que permiten a terraform interactuar con otros proveedores de servicios de la nube como AWS, Azure , Google Cloud, VMware, entre otros.
+
+* Recursos: Los recursos representan los componentes de la infraestructura que se desean gestionar, como instancias de máquinas virtuales, bases de datos, redes, entre otros.
+
+* Variables: Las variables en Terraform permiten parametrizar la configuración, lo que facilita la reutilización y la personalización de los archivos de configuración.
+
+* Salidas: Las salidas permiten exponer información sobre los recursos creados o modificados por Terraform, lo que puede ser útil para otros sistemas o para el usuario final.
+```
 6. Indaga en el detalle de los siguientes conceptos de Terraform: Plugin, Providers, variables, data, resources y terraform state, Dentro del concepto de variables, investiga adicionalmente el orden de prioridad de las mismas.
+
+```
+- plugin :Es  un componente de software que extiende las capacidades de una aplicación principal, en este caso Terraform, permitiéndole interactuar con distintos proveedores de servicios en la nube de manera consistente y eficiente.
+
+- Providers: es un componente fundamental que permite a Terraform interactuar con distintos proveedores de servicios en la nube, como AWS, Azure, Google Cloud, entre otros. Cada proveedor es un plugin que proporciona a Terraform la capacidad de gestionar los recursos específicos de ese proveedor.
+
+- Variables y su Orden de prioridad : Las variables son utilizadas para parametrizar la configuración y permitir la reutilización de código, su orden de priodidad :
+
+1. variables definidas en los archivos de configuracion: Estas variables pueden tener un valor por defecto o ser definidas como obligatorias.
+
+2. Archivos de variables: Estos archivos pueden ser utilizados para proporcionar valores específicos a las variables en diferentes entornos o situaciones.
+
+3. Variables de entorno :  Si una variable no está definida en los archivos de configuración o en archivos de variables, Terraform buscará si existe una variable de entorno con el mismo nombre y la utilizará si está presente.
+ 
+4. Flags en línea de comandos: Al ejecutar comandos de Terraform, se pueden proporcionar valores para las variables directamente en la línea de comandos utilizando flags específicos. 
 
 7. ¿Que son las expresiones dentro de Terraform? Explica el concepto de tipo y valores. Da ejemplos de los tipos string, number y bool
 Segun esta documentacion, explica brevemente a que se le conoce como "referencias a valores".
