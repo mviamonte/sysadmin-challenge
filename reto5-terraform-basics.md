@@ -181,5 +181,5 @@ terraform state list :  Muestra una lista de todos los recursos gestionados por 
 8. Luego de haber ejecutado satisfactoriamente los tres comandos básicos de `terraform`. ¿Notas alguna diferencia dentro del directorio `proyecto_final`? Comenta cuales archivos o directorios llaman tu atencion y agrega tus conclusiones. 
 
 Si, despues de ejecutar el comando `terraform apply` se creo un archivo en el directorio `proyecto_final` 
-Terraform crea un archivo llamado `terraform.tfstate` en el directorio de trabajo. Este archivo es el estado actual de la infraestructura, incluyendo información sobre los recursos que Terraform ha creado, modificado o eliminado.
+Terraform crea un archivo llamado `terraform.tfstate` en el directorio de trabajo. Este archivo es el estado actual de la infraestructura, incluyendo información sobre los recursos que Terraform ha creado, modificado o eliminado..
 
