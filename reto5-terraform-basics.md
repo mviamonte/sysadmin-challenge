@@ -110,4 +110,76 @@ En cuanto a una herramienta que pueda sustituir el uso de Terraform, existen otr
 Algunas ventajas de Terraform incluyen su sintaxis clara y legible, su soporte para múltiples proveedores de servicios en la nube, su comunidad activa y su capacidad para gestionar recursos de forma modular y reutilizable.
 Por otro lado, algunas desventajas de Terraform podrían incluir una curva de aprendizaje inicial para aquellos que no están familiarizados con su sintaxis y conceptos, así como posibles limitaciones en la gestión de recursos específicos de ciertos proveedores de servicios en la nube.
 
+
 ## Paso 2 (5.2)
+
+Teniendo claros todos los conceptos, hagamos una pequeña prueba con `Terraform`. Recuerda, crear un procedimiento paso a paso incluyendo las salidas de los comandos que consideres necesarios, comandos utilizados, etc.
+
+1. Instalar la version mas reciente de `terraform` en tu computadora.
+
+ ```
+sudo snap install terraform --classic
+ ```
+
+2. Crea un directorio llamado `proyecto_final`
+
+ ```
+ mkdir proyecto_final 
+ ```
+
+
+3. En el directorio creado anteriormente, crea un archivo llamado `main.tf`. Este archivo debe llevar la configuracion con la capacidad de crear un recurso `random` (este archivo realmente se puede llamar `pepito.tf`y `Terraform` lo entendera igual). La intencion de este recurso es crear una cadena de texto (string) aleatoria en base a los argumentos que le proporciones. [Revisa esta documentacion para entender el ejemplo](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/string). [^1] 
+
+ ```
+ touch main.tf
+ ```
+  - Usando Visual Studio Code 
+  En el archivo  `main.tf `:
+   ```
+  terraform {
+  required_providers {
+    random = {
+      source = "hashicorp/random"
+      version = "3.6.0"
+    }
+  }
+}
+ ```
+ - Nota: Aca ya se creo la instancia para una configuracion genral o random en terraform 
+
+4. Crea un archivo llamado `versions.tf` dentro del mismo directorio y agrega los bloques de codigo correspondientes que te permitan crear el recurso anterior utilizando el `provider` random, en el mismo link anterior pero yendo a la documentacion del [provider](https://registry.terraform.io/providers/hashicorp/random/latest/docs) en si, valida como se utiliza este `provider`. Especificamente, revisa el boton morado en la parte superior que indica **USE PROVIDER**
+
+ ```
+ touch versions.tf
+  ```
+   ```
+provider "random" {
+  # No se requiere ninguna configuración específica para el proveedor "random" en este ejemplo
+}
+
+resource "random_string" "name" {
+  length = 12
+  special = true
+}
+```
+- Nota : Aca ya se leindico a terraform cual seria el poovedor ademas del recurso a utilizar en este caso es random_string el cual imprimira cualquier conjunto de textos aleatorio, ademas otra sentencia como la longitud y si se desearia algun caracter especial (especial =true)
+
+5. Utiliza todos los comandos de `terraform` necesarios, para que tu configuracion, pueda crear satisfactoriamente, una cadena del tipo random de acuerdo a lo expresado en el archivo `main.tf`. Recuerda que necesitas el contenido de ambos archivos, es decir el de `main.tf` y el de `versions.tf`
+```
+terraform init
+terraform plan
+terraform apply
+```
+
+6. ¿Cual secuencia basica de comandos `terraform` te permiten validar la creacion de ese recurso `random` dentro de tu proyecto?
+```
+terraform show: se utiliza para inspeccionar el estado actual de la infraestructura gestionada por Terraform.
+terraform state list :  Muestra una lista de todos los recursos gestionados por Terraform y sus direcciones en el estado
+```
+7. Examina y analiza, de haber sido ejecutado satisfactoriamente, la salida de cada uno de estos tres comandos de la secuencia básica de comandos `terraform`
+
+8. Luego de haber ejecutado satisfactoriamente los tres comandos básicos de `terraform`. ¿Notas alguna diferencia dentro del directorio `proyecto_final`? Comenta cuales archivos o directorios llaman tu atencion y agrega tus conclusiones. 
+
+Si, despues de ejecutar el comando `terraform apply` se creo un archivo en el directorio `proyecto_final` 
+Terraform crea un archivo llamado `terraform.tfstate` en el directorio de trabajo. Este archivo es el estado actual de la infraestructura, incluyendo información sobre los recursos que Terraform ha creado, modificado o eliminado.
+
